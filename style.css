@@ -144,10 +144,6 @@ h6 {
    justify-content: space-between;
 }
 
-.item-label:hover {
-   color: #000;
-   transition: color .4s;
-}
 
 input:checked+.item-label {
    color: #000;
@@ -199,17 +195,7 @@ input:checked+.item-label .item-icon {
    display: block
 }
 
-.item-label:hover .item-icon {
-   transform: rotate(0deg);
-   transition: .5s;
-   display: block
-}
 
-.item:hover .content {
-   margin-top: 1em;
-   max-height: 100vh;
-   transition: max-height .8s;
-}
 
 @media(max-width: 820px) {
    .item-title {
@@ -231,7 +217,27 @@ input:checked+.item-label .item-icon {
    }
 }
 
-@media(min-width: 820px) {
+@media(min-width: 820px) {}
+
+@media(hover:hover) {
+
+   .item-label:hover {
+      color: #000;
+      transition: color .4s;
+   }
+
+   .item-label:hover .item-icon {
+      transform: rotate(0deg);
+      transition: .5s;
+      display: block
+   }
+
+   .item:hover .content {
+      margin-top: 1em;
+      max-height: 100vh;
+      transition: max-height .8s;
+   }
+
    .item-label {
       cursor: pointer;
       color: #5a8cca;
@@ -240,9 +246,11 @@ input:checked+.item-label .item-icon {
    .list:hover .item-icon {
       display: block;
    }
-   .list:hover .item-label{
-       color: #000;
+
+   .list:hover .item-label {
+      color: #000;
    }
+
    .item-icon {
       display: none;
    }
