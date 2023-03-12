@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,500,700&display=swap);
-
+@import url(https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,regular,500,600,700,800,600&display=swap);
 /* ОБНУЛЯНИЕ */
 * {
    padding: 0;
@@ -45,12 +45,13 @@ body {
    overflow-x: hidden;
    font-size: 100%;
    line-height: 1;
-   font-size: 14px;
+   font-size: 1rem;
    -ms-text-size-adjust: 100%;
    -moz-text-size-adjust: 100%;
    -webkit-text-size-adjust: 100%;
-   background-color: #b0bf62;
-   font-family: 'Ubuntu';
+   background-color: #caa77a4d;;
+   font-family: 'Libre Franklin';
+   letter-spacing: .2rem;
 }
 
 /* уравнтваем поведение шоифтов на разных платформах и браузерах, заприщает самовольное увеличение шрифта  */
@@ -112,18 +113,19 @@ h6 {
 
 .contaner {
    margin: 0 auto;
-   width: 600px;
-   padding: 0px 15px;
+   max-width: 1170px;
+   padding: 0px 2em;
 
 }
 
 .title {
-   font-size: 3rem;
+   font-size: 2rem;
    font-weight: 500;
+   margin-top: 2em;
 }
 
 .list {
-   margin-top: 2em;
+   margin-top: 1em;
 
 
 
@@ -131,21 +133,22 @@ h6 {
 
 .item {
    border-top: 2px solid #c2d2ad;
-   padding: 20px 0;
+   padding: 1em 0;
    cursor: pointer;
 }
 
 .item-label {
    cursor: pointer;
-   color: #2c8fff;
+   color: #5a8cca;;
 
 }
 
 .item-title {
-   font-size: 2rem;
+   font-size: 1.5rem;
    font-weight: 500;
    display: flex;
    justify-content: space-between;
+
 
 }
 
@@ -160,7 +163,7 @@ input:checked+.item-label {
 
 .item-icon {
    display: none;
-   font-size: 2rem;
+   font-size: 1.5rem;
    font-weight: 700;
    transform: rotate(45deg);
 }
@@ -175,7 +178,7 @@ input:checked+.item-label {
    text-align: center;
    max-height: 0;
    overflow: hidden;
-   max-width: 300px;
+   width: 50%;
    margin: 0 auto;
    transform: max-height 0.5s;
    background: #3d4039;
@@ -192,20 +195,9 @@ input {
    display: none;
 }
 
-/* 
-input:checked + .item-label .content {
-   color: #000;
-   margin-top: 1em;
-   max-height: 500px;
-} */
-
-
    .item-icon {
       display: block;
    }
-
-  
-
 
    input:checked+.item-label .content {
       color: #000;
@@ -214,8 +206,6 @@ input:checked + .item-label .content {
       max-height: 100vh;
       transition: max-height .8s;
    }
-
-
 
    input:checked+.item-label .item-icon {
       transform: rotate(0deg);
