@@ -1,0 +1,267 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,regular,500,600,700,800,600&display=swap);
+
+/* ОБНУЛЯНИЕ */
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* меняет подсчетдлины блока так чтобыудобно верстать */
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none;
+}
+
+/* убирает лининии обводки на неккоторых браузерах */
+
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+
+/* дулает эти теги блочными  */
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 1rem;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+   background-color: #caa77a4d;
+   ;
+   font-family: 'Libre Franklin';
+   letter-spacing: .2rem;
+}
+
+/* уравнтваем поведение шоифтов на разных платформах и браузерах, заприщает самовольное увеличение шрифта  */
+
+input,
+button,
+textarea {
+   font-size: inherit;
+}
+
+/* просим их наследовать семейство шрифта так как по умолчаниюони не неследуют */
+input ::-ms-clear {
+   display: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+button ::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+
+a,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+ul il {
+   list-style: none;
+}
+
+li {
+   list-style-type: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+/* разные теги чтобыпо одинаковому в разных браузерах смотрелись */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: 400;
+}
+
+/* обнуляем все наши заголовки */
+
+.contaner {
+   margin: 0 auto;
+   max-width: 1920px;
+   padding: 0px 2em;
+
+}
+
+.title {
+   font-size: 2rem;
+   font-weight: 500;
+   margin-top: 2em;
+}
+
+.list {
+   margin-top: 1em;
+}
+
+.item {
+   border-top: 2px solid #c2d2ad;
+   padding: 1em 0;
+   cursor: pointer;
+}
+
+
+.item-title {
+   font-size: 1.5rem;
+   font-weight: 500;
+   display: flex;
+   justify-content: space-between;
+}
+
+
+input:checked + .item-label {
+   color: #000;
+}
+
+.item-icon {
+   display: none;
+   font-size: 1.5rem;
+   font-weight: 700;
+   transform: rotate(45deg);
+}
+
+.item-icon {
+   display: block;
+}
+
+.content {
+   text-align: center;
+   max-height: 0;
+   overflow: hidden;
+   width: 50%;
+   margin: 0 auto;
+   transform: max-height 0.5s;
+   background: #3d4039;
+}
+
+.content img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+   margin: 0 auto;
+}
+
+input {
+   display: none;
+}
+
+input:checked+.item-label .content {
+   color: #000;
+   transition: color .8s;
+   margin-top: 1em;
+   max-height: 100vh;
+   transition: max-height .8s;
+}
+
+input:checked+.item-label .item-icon {
+   transform: rotate(0deg);
+   transition: transform .5s;
+   display: block
+}
+
+/*          MEDIA        */
+/* брекпоинт на разрешение 1400 не требуется. верстка получилась резиновая в принципе брекпоинт нужен только на разрешение 320*/
+
+@media(max-width: 820px) {
+   .item-title {
+      font-size: 1.3rem;
+   }
+
+   .item-icon {
+      font-size: 1.3rem;
+   }
+}
+
+@media(max-width: 320px) {
+   .item-title {
+      font-size: 1rem;
+   }
+
+   .item-icon {
+      font-size: 1.3rem;
+   }
+}
+
+/*          HOVER           */
+
+@media(hover:hover) {
+
+   .item-label:hover {
+      color: #000;
+      transition: color .4s;
+   }
+
+   .item-label:hover .item-icon {
+      transform: rotate(0deg);
+      transition: .5s;
+      display: block
+   }
+
+   .item:hover .content {
+      margin-top: 1em;
+      max-height: 100vh;
+      transition: all .8s;
+   }
+
+   .item-label {
+      cursor: pointer;
+      color: #5a8cca;
+   }
+
+   .list:hover .item-icon {
+      display: block;
+   }
+
+   .list:hover .item-label {
+      color: #000;
+   }
+
+   .item-icon {
+      display: none;
+   }
+}
+
+/*             ACTIV           */
+
+.item-label:active{
+   opacity: 0.6;
+}
+.item-label:active .item-title{
+   color: #5a8cca;
+}
